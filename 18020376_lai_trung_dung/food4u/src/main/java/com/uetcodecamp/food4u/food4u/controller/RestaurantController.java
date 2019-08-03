@@ -3,6 +3,7 @@ package com.uetcodecamp.food4u.food4u.controller;
 import com.uetcodecamp.food4u.food4u.model.Menu;
 import com.uetcodecamp.food4u.food4u.model.Rating;
 import com.uetcodecamp.food4u.food4u.model.Restaurant;
+import com.uetcodecamp.food4u.food4u.model.RestaurantAll;
 import com.uetcodecamp.food4u.food4u.service.RestaurantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +22,7 @@ public class RestaurantController {
     }
 
     @RequestMapping("")
-    public List<Restaurant> index() {
+    public List<RestaurantAll> index() {
         return restaurantService.getAllRestaurant();
     }
 

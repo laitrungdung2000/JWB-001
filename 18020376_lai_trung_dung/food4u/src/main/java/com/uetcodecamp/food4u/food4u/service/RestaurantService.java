@@ -3,7 +3,9 @@ package com.uetcodecamp.food4u.food4u.service;
 import com.uetcodecamp.food4u.food4u.model.Menu;
 import com.uetcodecamp.food4u.food4u.model.Rating;
 import com.uetcodecamp.food4u.food4u.model.Restaurant;
+import com.uetcodecamp.food4u.food4u.model.RestaurantAll;
 import com.uetcodecamp.food4u.food4u.repository.MenuRepo;
+import com.uetcodecamp.food4u.food4u.repository.RestaurantAllRepo;
 import com.uetcodecamp.food4u.food4u.repository.RestaurantRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,9 +18,11 @@ public class RestaurantService {
     RestaurantRepo restaurantRepo;
     @Autowired
     MenuRepo menuRepo;
+    @Autowired
+    RestaurantAllRepo restaurantAllRepo;
 
-    public List<Restaurant> getAllRestaurant() {
-        return restaurantRepo.findAll();
+    public List<RestaurantAll> getAllRestaurant() {
+        return restaurantAllRepo.findAll();
     }
 
     public Restaurant getRestaurantById(int id) {
